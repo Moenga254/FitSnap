@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "FitSnap",
+    "slug": "fitsnap",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "scheme": "fitsnap",
+    "plugins": [
+      "expo-router",
+      "expo-image-picker"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.fitsnap.app"
+    },
+    "android": {
+      "package": "com.fitsnap.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0a0a0a"
+      }
+    }
+  }
+}
