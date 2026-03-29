@@ -1,16 +1,3 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
+import 'expo-router/entry';
 
-export default function App() {
-  return (
-    <SafeAreaView style={styles.container}>
-      {/* Add your app content here */}
-    </SafeAreaView>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+export { default } from './app/_layout';
