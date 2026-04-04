@@ -160,10 +160,14 @@ export default function ScanScreen() {
 
                 {/* Change Photo Button */}
                 <Pressable
-                  onPress={handleClearImage}
-                  className="w-full bg-surface rounded-full py-4 items-center border border-border active:opacity-70"
+                  onPress={handleTakePhoto}
+                  style={({ pressed }) => [{
+                    opacity: pressed ? 0.8 : 1,
+                    transform: [{ scale: pressed ? 0.97 : 1 }],
+                  }]}
+                  className="w-full bg-surface rounded-full py-4 items-center border border-border"
                 >
-                  <Text className="text-lg font-semibold text-foreground">Change Photo</Text>
+                  <Text className="text-lg font-semibold text-foreground">Retake Photo</Text>
                 </Pressable>
               </View>
             </View>
