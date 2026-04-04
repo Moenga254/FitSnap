@@ -54,7 +54,10 @@ const config: ExpoConfig = {
     supportsTablet: true,
     bundleIdentifier: env.iosBundleId,
     "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCameraUsageDescription": "FitSnap needs access to your camera to analyze meal photos and track nutrition.",
+        "NSPhotoLibraryUsageDescription": "FitSnap needs access to your photo library to upload meal photos for analysis.",
+        "NSPhotoLibraryAddOnlyUsageDescription": "FitSnap needs permission to save analyzed meal photos to your library."
       }
   },
   android: {
@@ -67,7 +70,7 @@ const config: ExpoConfig = {
     edgeToEdgeEnabled: true,
     predictiveBackGestureEnabled: false,
     package: env.androidPackage,
-    permissions: ["POST_NOTIFICATIONS"],
+    permissions: ["POST_NOTIFICATIONS", "CAMERA", "READ_EXTERNAL_STORAGE", "WRITE_EXTERNAL_STORAGE"],
     intentFilters: [
       {
         action: "VIEW",
@@ -89,6 +92,13 @@ const config: ExpoConfig = {
   },
   plugins: [
     "expo-router",
+    [
+      "expo-image-picker",
+      {
+        photosPermission: "Allow $(PRODUCT_NAME) to access your photos.",
+        cameraPermission: "Allow $(PRODUCT_NAME) to access your camera.",
+      },
+    ],
     [
       "expo-audio",
       {
